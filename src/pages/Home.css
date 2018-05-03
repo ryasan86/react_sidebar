@@ -1,0 +1,23 @@
+.palette-choices {
+  text-align: center;
+}
+
+.palette {
+  height: 5rem;
+  width: 5rem;
+  display: inline-block;
+  margin: 1rem;
+  border-radius: 50%;
+}
+
+.blue {
+  background-color: blue;
+}
+
+.red {
+  background-color: red;
+}
+
+.dark {
+  background-color: #222;
+}

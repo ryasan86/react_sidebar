@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { routes } from './../routes';
+import SidebarTop from './SidebarTop';
 import SidebarItem from './SidebarItem';
 import './Sidebar.css';
 
@@ -8,6 +9,7 @@ export default class Sidebar extends Component {
     return (
       <div className="sidebar-wrapper">
         <div className="sidebar-nav">
+          <SidebarTop />
           {routes.map((route, index) => (
             <SidebarItem
               key={index}
