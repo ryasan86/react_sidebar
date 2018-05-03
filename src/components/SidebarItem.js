@@ -7,7 +7,7 @@ export default class SidebarItem extends Component {
     const { route } = this.props;
     return (
       <div className="sidebar-item">
-        <Link to={route.path}>{route.name}</Link>
+        <Link to={route.path} onClick={this.props.toggleSidebar}>{route.name}</Link>
       </div>
     );
   }

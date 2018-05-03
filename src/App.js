@@ -24,11 +24,9 @@ export default class App extends Component {
       <BrowserRouter>
         <div>
           <BurgerNav toggleSidebar={this.toggleSidebar} />
-          <div
-            className={this.state.isOpen ? 'wrapper toggled' : 'wrapper'}
-          >
-            <Sidebar isOpen={this.state.isOpen} />
-            <div className="content">
+          <div className={this.state.isOpen ? 'wrapper toggled' : 'wrapper'}>
+            <Sidebar isOpen={this.state.isOpen} toggleSidebar={this.toggleSidebar} />
+            <div className="content-wrapper">
               <Switch>
                 {routes.map((route, index) => (
                   <Route

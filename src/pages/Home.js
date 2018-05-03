@@ -2,6 +2,6 @@ import React, { Component } from 'react';
 
 export default class HomePage extends Component {
   render() {
-    return <div className="content-wrapper">Hello Home Page</div>;
+    return <div>Hello Home Page</div>;
   }
 }

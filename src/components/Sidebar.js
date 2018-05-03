@@ -9,7 +9,11 @@ export default class Sidebar extends Component {
       <div className="sidebar-wrapper">
         <div className="sidebar-nav">
           {routes.map((route, index) => (
-            <SidebarItem key={index} route={route} />
+            <SidebarItem
+              key={index}
+              route={route}
+              toggleSidebar={this.props.toggleSidebar}
+            />
           ))}
         </div>
       </div>
