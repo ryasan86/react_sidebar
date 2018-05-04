@@ -10,14 +10,14 @@
   border-radius: 50%;
 }
 
-.blue {
+.palette.blue {
   background-color: blue;
 }
 
-.red {
+.palette.red {
   background-color: red;
 }
 
-.dark {
+.palette.dark {
   background-color: #222;
 }

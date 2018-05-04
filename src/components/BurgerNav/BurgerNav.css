@@ -1,0 +1,16 @@
+.burger-nav {
+  padding: 1rem;
+  color: white;
+}
+
+.burger-nav.blue {
+  background-color: blue;
+}
+
+.burger-nav.red {
+  background-color: red;
+}
+
+.burger-nav.dark {
+  background-color: #222;
+}

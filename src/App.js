@@ -1,38 +1,46 @@
 import React, { Component } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 import { Route, Switch } from 'react-router';
+import { connect } from 'react-redux';
 import { routes } from './routes';
-import Sidebar from './components/Sidebar';
-import BurgerNav from './components/BurgerNav';
+import Sidebar from './components/Sidebar/Sidebar';
+import BurgerNav from './components/BurgerNav/BurgerNav';
 import './App.css';
 
-export default class App extends Component {
+class App extends Component {
   constructor() {
     super();
     this.state = {
       isOpen: false
     };
-    this.toggleSidebar = this.toggleSidebar.bind(this);
+    this.handleToggleSidebar = this.handleToggleSidebar.bind(this);
   }
 
-  toggleSidebar() {
+  handleToggleSidebar() {
     this.setState({ isOpen: !this.state.isOpen });
   }
 
   render() {
+    const { isOpen } = this.state;
+
     return (
       <BrowserRouter>
         <div>
-          <BurgerNav toggleSidebar={this.toggleSidebar} />
-          <div className={this.state.isOpen ? 'wrapper toggled' : 'wrapper'}>
-            <Sidebar isOpen={this.state.isOpen} toggleSidebar={this.toggleSidebar} />
+          <BurgerNav onToggleSidebar={this.handleToggleSidebar} />
+          <div className={isOpen ? `wrapper toggled` : 'wrapper'}>
+            <Sidebar
+              isOpen={isOpen}
+              onToggleSidebar={this.handleToggleSidebar}
+            />
             <div className="content-wrapper">
               <Switch>
                 {routes.map((route, index) => (
                   <Route
                     key={index}
                     path={route.path}
-                    component={route.component}
+                    render={props => (
+                      <route.component {...props} theme={this.props.theme} />
+                    )}
                   />
                 ))}
               </Switch>
@@ -43,3 +51,11 @@ export default class App extends Component {
     );
   }
 }
+
+const mapStateToProps = state => {
+  return {
+    theme: state.theme
+  };
+};
+
+export default connect(mapStateToProps)(App);
