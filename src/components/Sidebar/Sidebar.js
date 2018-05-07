@@ -9,17 +9,13 @@ class Sidebar extends Component {
   render() {
     const sidebarItems = routes
       .filter(route => route.name)
-      .map((route, index) => {
-        if (route.name) {
-          return (
-            <SidebarItem
-              key={index}
-              route={route}
-              onToggleSidebar={this.props.onToggleSidebar}
-            />
-          );
-        }
-      });
+      .map((route, index) => (
+        <SidebarItem
+          key={index}
+          route={route}
+          onToggleSidebar={this.props.onToggleSidebar}
+        />
+      ));
 
     return (
       <div className={`sidebar-wrapper ${this.props.theme}`}>

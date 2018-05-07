@@ -3,6 +3,10 @@
   color: white;
 }
 
+.burger-nav > .fas.fa-bars.fa-lg:hover {
+  color: rgb(214, 214, 214);
+}
+
 .burger-nav.blue {
   background-color: blue;
 }

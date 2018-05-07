@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import './Home.css';
 import { changeTheme } from './../../actions';
 
-const themes = ['red', 'blue', 'dark'];
+const appThemes = ['red', 'blue', 'dark'];
 
 class HomePage extends Component {
   handleSelectTheme(theme) {
@@ -12,19 +12,17 @@ class HomePage extends Component {
   }
 
   render() {
-    return (
-      <div className="palette-choices">
-        {themes.map((theme, index) => {
-          return (
-            <div
-              key={index}
-              className={`palette ${theme}`}
-              onClick={() => this.handleSelectTheme(theme)}
-            />
-          );
-        })}
-      </div>
-    );
+    const themes = appThemes.map((theme, index) => {
+      return (
+        <div
+          key={index}
+          className={`palette ${theme}`}
+          onClick={() => this.handleSelectTheme(theme)}
+        />
+      );
+    });
+
+    return <div className="palette-choices">{themes}</div>;
   }
 }
 

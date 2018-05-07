@@ -27,7 +27,7 @@ class App extends Component {
       <BrowserRouter>
         <div>
           <BurgerNav onToggleSidebar={this.handleToggleSidebar} />
-          <div className={isOpen ? `wrapper toggled` : 'wrapper'}>
+          <div className={isOpen ? 'wrapper toggled' : 'wrapper'}>
             <Sidebar
               isOpen={isOpen}
               onToggleSidebar={this.handleToggleSidebar}

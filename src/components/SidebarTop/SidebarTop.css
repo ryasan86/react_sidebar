@@ -1,6 +1,7 @@
 .sidebar-top {
   text-align: center;
-  border-bottom: white 0.1rem solid;
+  border-bottom: rgb(214, 214, 214) 0.1rem solid;
+  border-top: rgb(214, 214, 214) 0.1rem solid;
 }
 
 .logo {
